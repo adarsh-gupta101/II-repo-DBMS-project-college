@@ -37,11 +37,11 @@ function Allusers() {
           Back to Home
         </p>
       </a>
-      <div className=' min-h-screen flex justify-center items-center '>
+      <div className=' min-h-screen flex flex-col md:flex-row flex-wrap justify-center items-center '>
         {Allusers &&
           Allusers.map((res) => {
             return (
-              <div className='p-4 bg-white shadow-2xl hover:shadow-xl shadow-pink-200 min-h-76 max-h-fit mt-4 m-2  w-1/5 rounded '>
+              <div className='p-4 bg-white shadow-2xl hover:shadow-xl shadow-pink-200 min-h-76 max-h-fit mt-4 m-2 w-3/4 md:w-1/5 rounded '>
                 <img
                   src={res.profile_picture || male}
                   className='shadow-lg rounded-full'></img>

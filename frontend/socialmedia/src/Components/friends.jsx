@@ -33,7 +33,7 @@ function Friends() {
       {friends?.map((friend) => {
         if (friend.user_id != localStorage.getItem("userID")) {
           return (
-            <div className=' bg-white p-2 h-fit  m-8 flex-col items-center justify-center rounded m-auto w-1/5 h-fit border-2 border-blue-200 hover:border-pink-500 shadow-2xl shadow-blue-400'>
+            <div className=' bg-white p-2 h-fit  m-8 flex-col items-center justify-center rounded m-auto md:w-1/5 h-fit border-2 border-blue-200 hover:border-pink-500 shadow-2xl shadow-blue-400'>
               {/* <p>{friend}</p> */}
               <p className="text-2xl first-letter:text-3xl text-center">{friend.name}</p>
               <p className="text-gray-800 text-center">{friend.name}</p>

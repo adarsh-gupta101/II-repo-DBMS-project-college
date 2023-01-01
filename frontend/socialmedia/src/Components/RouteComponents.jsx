@@ -52,19 +52,19 @@ function RouteComponents() {
       )}
 
       <div className='flex md:flex-row justify-center pt-8'>
-        <div className='w-1/6 shadow-xl shadow-green-300 p-2 bg-white justify-center flex-row items-center mx-4 rounded hover:shadow-sm hover:shadow-blue-300'>
+        <div className='md:w-1/6 overflow-scroll shadow-xl shadow-green-300 p-2 bg-white justify-center flex-row items-center mx-4 rounded hover:shadow-sm hover:shadow-blue-300'>
           <a href='/allusers'>
             <img src={user} alt='user' className='h-3/4' />
             <h2 className='text-center text-xl font-semibold'>Users</h2>
           </a>
         </div>
-        <div className='w-1/6 shadow-lg p-2 shadow-red-300  bg-white justify-center flex-row items-center mx-4 rounded hover:shadow-sm hover:shadow-blue-300'>
+        <div className='md:w-1/6 shadow-lg p-2 shadow-red-300  bg-white justify-center flex-row items-center mx-4 rounded hover:shadow-sm hover:shadow-blue-300'>
           <a href='/allposts'>
             <img src={post} alt='post' className='h-3/4' />
             <h2 className='text-center text-xl font-semibold'>Posts</h2>
           </a>
         </div>
-        <div className='w-1/6 shadow-xl shadow-pink-300  p-2 bg-white justify-center flex-row items-center mx-4 rounded hover:shadow-sm hover:shadow-blue-300'>
+        <div className='md:w-1/6 shadow-xl shadow-pink-300  p-2 bg-white justify-center flex-row items-center mx-4 rounded hover:shadow-sm hover:shadow-blue-300'>
           <a href='/allfriends'>
             <img src={friend} alt='friend' className='h-3/4' />
             <h2 className='text-center text-xl font-semibold'>Friends</h2>

@@ -34,9 +34,9 @@ const Login = () => {
 
   return (
    
-    <div className='flex flex-col justify-center items-center  w-full h-screen bg-gray-50'>
-      <div className='bg-white rounded-lg shadow-lg p-6  w-1/2  hover:shadow-sm '>
-        <img src={login} alt='logo' className='w-1/5 mx-auto' />
+    <div className='flex flex-col justify-center items-center  w-full h-screen bg-gray-50' style={{backgroundImage:`https://images.pexels.com/photos/10769588/pexels-photo-10769588.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load)`}}>
+      <div className='bg-white rounded-lg shadow-lg p-6  md:w-1/2  hover:shadow-sm ' >
+        <img src={login} alt='logo' className='md:w-1/5 mx-auto' />
         <h1 className='text-2xl font-bold mb-4'>Login</h1>
         <div className='mb-4'>
           <label
