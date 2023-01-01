@@ -11,7 +11,7 @@ function RouteComponents() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/userdetails?user_id=${user_id}`)
+      .get(`https://socialmedia-backend-glx4.onrender.com/userdetails?user_id=${user_id}`)
       .then((res) => {
         console.log(res);
         setUserDetails(res.data);

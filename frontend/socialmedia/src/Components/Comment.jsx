@@ -14,7 +14,7 @@ function CommentCont({ postid }) {
   useEffect(() => {
     // get comments by post id
     axios
-      .get(`http://localhost:3000/postcomments?post_id=${post_id}`)
+      .get(`https://socialmedia-backend-glx4.onrender.com/postcomments?post_id=${post_id}`)
       .then((res) => {
         setPostContent(res.data)
         console.log(postcomments)

@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function Allusers() {
   const [Allusers, setAllusers] = useState();
   useEffect(() => {
-    axios.get("http://localhost:3000/allusers", {}).then((res) => {
+    axios.get("https://socialmedia-backend-glx4.onrender.com/allusers", {}).then((res) => {
       // console.log(res.data);
       setAllusers(res.data);
     });
@@ -16,7 +16,7 @@ function Allusers() {
 
   function AddFriend(friend) {
     axios
-      .post("http://localhost:3000/addfriend", {
+      .post("https://socialmedia-backend-glx4.onrender.com/addfriend", {
         user_id: localStorage.getItem("userID"),
         friend_id: friend,
       })

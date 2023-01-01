@@ -10,7 +10,7 @@ const Signup = () => {
   const [picture, Setpicture] = useState("");
 
   const SignUp = (e) => {
-    axios.post("http://localhost:3000/createuser", {
+    axios.post("https://socialmedia-backend-glx4.onrender.com/createuser", {
       name: name,
       email: email,
       password: password,

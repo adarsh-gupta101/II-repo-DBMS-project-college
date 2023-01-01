@@ -11,7 +11,7 @@ const Login = () => {
 
   const Handlelogin = () => {
     axios
-      .post("http://localhost:3000/login", {
+      .post("https://socialmedia-backend-glx4.onrender.com/login", {
         email: email,
         password: password,
       })

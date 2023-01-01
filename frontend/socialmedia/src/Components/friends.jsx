@@ -9,7 +9,7 @@ function Friends() {
 
   function fetchFriends(u) {
     axios
-      .get(`http://localhost:3000/friends?user_id=${u}`,{user_id:u})
+      .get(`https://socialmedia-backend-glx4.onrender.com/friends?user_id=${u}`,{user_id:u})
       .then((response) => {
         setFriends(response.data.data);
         console.log(response.data); // array of friend_id values

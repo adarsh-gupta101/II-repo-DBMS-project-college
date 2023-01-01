@@ -21,7 +21,7 @@ const CreatePost = () => {
     toast.success("Post created successfully!")
 
     axios
-      .post("http://localhost:3000/createpost", {
+      .post("https://socialmedia-backend-glx4.onrender.com//createpost", {
         user_id: localStorage.getItem("userID"),
         post_text: postContent,
         post_time: yyyy.toString() + "/" + mm + "/" + dd.toString(),

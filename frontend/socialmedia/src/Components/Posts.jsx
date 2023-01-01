@@ -24,7 +24,7 @@ function Posts() {
       .padStart(2, "0")}:${sec.toString().padStart(2, "0")}`;
 
     axios
-      .post(`http://localhost:3000/comment`, {
+      .post(`https://socialmedia-backend-glx4.onrender.com//comment`, {
         user_id: userID,
         post_id: post_id,
         comment_text: comment,
