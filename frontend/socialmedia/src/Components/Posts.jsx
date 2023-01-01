@@ -42,7 +42,7 @@ function Posts() {
 
   const finduser = (user_id) => {
     const data = axios
-      .get(`http://localhost:3000/userdetails?user_id=${user_id}`)
+      .get(`https://socialmedia-backend-glx4.onrender.com/userdetails?user_id=${user_id}`)
       .then((res) => {
         // if not same user id push
         // console.log(res.data[0].name);
@@ -56,7 +56,7 @@ if(user.length===0){
 
   const Like = (id) => {
     const liked = axios
-      .post(`http://localhost:3000/likes?user_id=${userID}&post_id=${id}`
+      .post(`https://socialmedia-backend-glx4.onrender.com/?user_id=${userID}&post_id=${id}`
       , {user_id: userID, post_id: id })
       .then((res) => {});
   };
@@ -64,7 +64,7 @@ if(user.length===0){
   //   const find
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/posts`, {}).then((res) => {
+    axios.get(`https://socialmedia-backend-glx4.onrender.com/posts`, {}).then((res) => {
       setPosts(res.data);
       console.log(res.data)
 
