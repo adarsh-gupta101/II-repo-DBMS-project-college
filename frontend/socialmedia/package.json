@@ -1,12 +1,15 @@
 {
   "name": "socialmedia",
+  "homepage":"https://adarsh-gupta101.github.io/II-repo-DBMS-project-college",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy":"yarn build",
+    "deploy":"yarn build && gh-pages -d build"
   },
   "dependencies": {
     "axios": "^1.2.1",
