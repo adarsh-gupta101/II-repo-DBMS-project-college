@@ -30,7 +30,8 @@ const CreatePost = () => {
       .then((res) => {
         console.log(res);
       }).then((() =>{
-        window.location.reload();
+        setPostContent("")
+        // window.location.reload();
 
       }))
       .catch((err) => {

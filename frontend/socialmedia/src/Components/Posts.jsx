@@ -97,14 +97,14 @@ if(user.length===0){
               <div className='flex'>
                 <img
                   src={post.user[0].profile_picture}
-                  className='rounded-full w-2/12 object-contain mr-4'
+                  className='rounded-full w-24 h-24 object-contain mr-4'
                 />
                 <div className='flex flex-col'>
                   {" "}
-                  <p className='text-gray-900 text-sm font-semibold'>
+                  <p className='text-gray-900 text-lg font-semibold'>
                     {post.user[0].name}
                   </p>
-                  <p className='text-gray-500 text-sm'>@{post.user[0].name}</p>
+                  <p className='text-gray-500 text-sm'>@{post.user[0].name} </p>
                 </div>
               </div>
               <h2 className='font-semibold text-xl mt-8'>{post.post_text}</h2>
