@@ -24,7 +24,7 @@ function Posts() {
       .padStart(2, "0")}:${sec.toString().padStart(2, "0")}`;
 
     axios
-      .post(`https://socialmedia-backend-glx4.onrender.com//comment`, {
+      .post(`https://socialmedia-backend-glx4.onrender.com/comment`, {
         user_id: userID,
         post_id: post_id,
         comment_text: comment,
@@ -56,7 +56,7 @@ if(user.length===0){
 
   const Like = (id) => {
     const liked = axios
-      .post(`https://socialmedia-backend-glx4.onrender.com/?user_id=${userID}&post_id=${id}`
+      .post(`https://socialmedia-backend-glx4.onrender.com/likes`
       , {user_id: userID, post_id: id })
       .then((res) => {});
   };
@@ -66,10 +66,13 @@ if(user.length===0){
   useEffect(() => {
     axios.get(`https://socialmedia-backend-glx4.onrender.com/posts`, {}).then((res) => {
       setPosts(res.data);
-      console.log(res.data)
+      // console.log(res.data)
+
+      // console.log(posts.reverse());
+
 
       // console.log(res.data.reverse());
-    }, [posts,postLikeCount]);
+    }, [postLikeCount]);
 
     // posts.map((post) => {
     //   finduser(post.user_id);
@@ -88,7 +91,7 @@ if(user.length===0){
       
       {/* <RouteComponents/> */}
       {posts &&
-        posts?.map((post) => {
+        posts.reverse().map((post) => {
           return (
             <div className='bg-white shadow-lg shadow-purple-400 rounded-lg p-4 my-4 w-5/6 md:w-1/2 m-auto'>
               <div className='flex'>
@@ -115,7 +118,8 @@ if(user.length===0){
               <section className='flex mt-4 cursor:pointer'>
                 <p className='p-2 text-lg'>
                   <span
-                    className='hover:text-2xl '
+                    className='hover:text-2xl cursor-pointer'
+
                     onClick={() => Like(post.post_id)}>
                     💖
                   </span>

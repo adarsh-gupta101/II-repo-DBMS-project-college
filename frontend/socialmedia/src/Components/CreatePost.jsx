@@ -43,7 +43,7 @@ const CreatePost = () => {
   };
 
   return (
-    <form className='flex p-4 md:w-1/2 m-2 md:m-auto mt-4'>
+    <form className='flex p-4 md:w-1/2 m-2 md:m-auto md:mt-12'>
       <ToastContainer/>
       <div className='w-full'>
         {/* input text area */}

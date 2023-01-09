@@ -1,8 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const { createClient } = require("@supabase/supabase-js");
-const dotenv=require("dotenv")
-dotenv.config()
+const dotenv = require("dotenv");
+dotenv.config();
 
 // Create the Express app
 const app = express();
@@ -10,11 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 // Create a connection to Supabase
-const supabase = createClient(
-  process.env.URL,
-process.env.API);
+const supabase = createClient(process.env.URL, process.env.API);
 // console.log(supabase.)
-
 
 app.post("/addfriend", async (req, res) => {
   const { user_id, friend_id } = req.body;
@@ -26,7 +23,7 @@ app.post("/addfriend", async (req, res) => {
   } catch (error) {
     res.status(501).send({ error: error.message });
   }
-})
+});
 
 app.get("/allusers", async (req, res) => {
   let { data: users, error } = await supabase.from("users").select("*");
@@ -42,16 +39,20 @@ app.get("/friends", async (req, res) => {
       .select("friend_id")
       .eq("user_id", user_id);
 
-      console.log(data)
-
+    console.log(data);
 
     // get friends for loop
 
+    const friends = await supabase
+      .from("users")
+      .select("*")
+      .in(
+        "user_id",
+        data.map((f) => f.friend_id)
+      );
+    // console.log(friends)
 
-const friends=await supabase.from("users").select("*").in("user_id",data.map(f=>f.friend_id))
-// console.log(friends)
-
-// data[0].friends=friends.data
+    // data[0].friends=friends.data
     //   'SELECT friend_id FROM friends WHERE user_id = $1',
     //   [user_id]
     // );
@@ -258,19 +259,21 @@ app.post("/createuser", async (req, res) => {
 
 app.post("/likes", async (req, res) => {
   const { user_id, post_id } = req.body;
-  console.log(user_id, post_id);
+  const data = req.body;
+  // console.log("data", data);
 
   try {
     // if(liked) then unlike
     // else like
 
     const isAlradyLiked = await supabase
-
       .from("likes")
       .select("*")
       .eq("post_id", post_id);
 
-    if (isAlradyLiked.data.length > 0) {
+   console.log(isAlradyLiked);
+
+    if (isAlradyLiked?.data.length > 0) {
       const { data: rows } = await supabase
         .from("likes")
         .delete()
@@ -290,4 +293,6 @@ app.post("/likes", async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 3000, () => console.log("Server listening on port 3000!"));
+app.listen(process.env.PORT || 3000, () =>
+  console.log("Server listening on port 3000!")
+);
