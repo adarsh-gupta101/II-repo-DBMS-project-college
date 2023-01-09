@@ -91,9 +91,9 @@ if(user.length===0){
       
       {/* <RouteComponents/> */}
       {posts &&
-        posts.reverse().map((post) => {
+        posts.reverse().map((post,key) => {
           return (
-            <div className='bg-white shadow-lg shadow-purple-400 rounded-lg p-4 my-4 w-5/6 md:w-1/2 m-auto'>
+            <div key={key} className='bg-white shadow-lg shadow-purple-400 rounded-lg p-4 my-4 w-5/6 md:w-1/2 m-auto'>
               <div className='flex'>
                 <img
                   src={post.user[0].profile_picture}

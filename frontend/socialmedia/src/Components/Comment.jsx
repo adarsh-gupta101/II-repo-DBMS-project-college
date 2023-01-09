@@ -1,10 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 const userID = localStorage.getItem("userID");
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function CommentCont({ postid }) {
   const [comment, setComment] = useState();
@@ -26,10 +24,7 @@ function CommentCont({ postid }) {
         // console.log(postcomments)
       });
   }, [CommentResp]);
-  useEffect(() => {
-    // get comments by post id
-    console.log(CommentResp);
-  }, [CommentResp]);
+ 
   const handleComment = (post_id) => {
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -54,7 +49,7 @@ function CommentCont({ postid }) {
   return (
     <div>
       <section className='flex mt-4 w-11/12 m-auto'>
-      <ToastContainer />
+        <ToastContainer />
 
         <input
           type='text'
@@ -74,9 +69,9 @@ function CommentCont({ postid }) {
       <section className='flex flex-wrap justify-center max-h-72 overflow-scroll '>
         {/* show 3 comments */}
         {postcomments &&
-          postcomments.reverse().map((comment) => {
+          postcomments.reverse().map((comment, key) => {
             return (
-              <div className='shadow my-2  '>
+              <div className='shadow my-2  ' key={key}>
                 <div className='flex justify-start'>
                   <img
                     src={comment.user.profile_picture}
