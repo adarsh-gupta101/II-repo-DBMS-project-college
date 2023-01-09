@@ -69,9 +69,9 @@ function CommentCont({ postid }) {
       <section className='flex flex-wrap justify-center max-h-72 overflow-scroll '>
         {/* show 3 comments */}
         {postcomments &&
-          postcomments.reverse().map((comment, key) => {
+          postcomments.map((comment, index) => {
             return (
-              <div className='shadow my-2  ' key={key}>
+              <div className='shadow my-2  ' key={index}>
                 <div className='flex justify-start'>
                   <img
                     src={comment.user.profile_picture}
